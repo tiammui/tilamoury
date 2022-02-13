@@ -17,7 +17,7 @@
   <!-- styles needed for initial rendering -->
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
-<body>
+<body class="signed-in">
   <div id="loader">
     <style>
       #loader {
@@ -94,25 +94,120 @@
         <button onclick="modalControl('search-view')"><i class="fas fa-search"></i> Search ...</button>
       </div>
 
-      <div>
-        <div class="propic"></div>
+      <div class="auth-pic">
+        <div role="img"></div>
+        <button>
+          <i class="fas fa-user"></i>
+        </button>
       </div>
 
     </div>
 
     <div id="main-container">
       <div id="tags" class="carousel">
-        <ul id="card-container"> <!-- Event delegation -->
+        <ul id="tags-con"> <!-- Event delegation -->
+          <li class="card active">
+            <a href="javascript:void">Computer Science</a>
+            <div class="cancel">x</div>
+          </li>
+          <li class="card active">
+            <a href="javascript:void">Computer Science</a>
+            <div class="cancel">x</div>
+          </li>
           <li class="card">
             <a href="javascript:void">Computer Science</a>
+            <div class="cancel">x</div>
+          </li>
+          <li class="card">
+            <a href="javascript:void">Computer Science</a>
+            <div class="cancel">x</div>
           </li>
         </ul>        
+      </div>
+
+      <!-- can be integrated later -->
+      <div id="cupid-board" class="useless">
+        <h3>Cupid Board</h3>
+        <div class="carousel">
+          <ul>
+            <li class="card">
+              
+            </li>
+            <li class="card">
+
+            </li>
+            <li class="card">
+
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="love-messages">
+        <h3>Love Messages</h3>
+        <ul>
+          <li class="love-message" data-message-id="0071" onclick="showMessage()">
+            <div class="detail-con">
+              <div class="rank">1</div>
+              <h4>Adams Abaikhalumhe</h4>
+              <p>
+                <span>from Adams Abaikhalumhe</span>
+                <div class="signature">
+                  <i class="fas fa-signature"></i>
+                  <b>20</b>
+                  <i class="fas fa-info-circle"></i>
+                </div>
+                <a href="">See Love Message</a>
+              </p>
+              <div class="message-id">#0071</div>
+            </div>
+            <div role="img" style="background-image: url('./images/pro5.jpg');">
+            </div>
+          </li>
+          <li class="love-message" data-message-id="0071" onclick="showMessage()">
+            <div class="detail-con">
+              <div class="rank">2</div>
+              <h4>Adams Abaikhalumhe</h4>
+              <p>
+                <span>from Adams Abaikhalumhe</span>
+                <div class="signature">
+                  <i class="fas fa-signature"></i>
+                  <b>20</b>
+                  <i class="fas fa-info-circle"></i>
+                </div>
+                <a href="">See Love Message</a>
+              </p>
+              <div class="message-id">#0071</div>
+            </div>
+            <div role="img" style="background-image: url('./images/pro5.jpg');">
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 
   <div id="modals">
-    <div id='test-modal'>
+    <div id='message-modal' class="">
+      <div class="modal-body">
+        <!-- sticky close-bar can be put here -->
+        <button class="close" onclick="hideMessage()">x</button>
+        <img src="./images/logo.png" alt="" class="clip" width="40">
+        <div class="love-pic" role="img"></div>
+        <div class="caption">
+          -- message from <b>Muizz</b>
+        </div>
+
+        <div class="modal-content">
+          <h4>Dear Mary Jane</h4>
+          <p>
+            I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the happiest man on earth I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the happiest man on earth I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the happiest man on earth
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id='test-modal' class="show">
       <div class="modal-body">
         <!-- sticky close-bar can be put here -->
 
@@ -121,6 +216,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <div id="snackbar">

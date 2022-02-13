@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'seguibl';
+	src: url('./seguibl.eot');
+	src: local('seguibl'), url('./seguibl.woff') format('woff'), url('./seguibl.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_40310">Text with this font applied</p> */
+.fontsforweb_fontid_40310 {
+	font-family: 'seguibl' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
