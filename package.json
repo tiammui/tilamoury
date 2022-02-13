@@ -1,0 +1,23 @@
+{
+  "name": "tilamour",
+  "version": "1.0.0",
+  "description": "love love",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiammui/tilamoury.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiammui/tilamoury/issues"
+  },
+  "homepage": "https://github.com/tiammui/tilamoury#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
