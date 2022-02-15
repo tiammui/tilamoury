@@ -1,0 +1,111 @@
+/* To style how the frame should look, DO NOT change the position property it affect frame's Curtain */
+.bipp-frame {
+	margin: 10px auto;
+	border: 5px solid #448;
+	border-radius: 8px;
+	cursor: pointer;
+	position: relative;
+}
+
+.bipp-frame:hover {
+	-webkit-filter: brightness(60%);
+	filter: brightness(60%);
+}
+
+/* background-color and border-radius are properties adviseable to change here it style frame's Curtain */
+.bipp-curtain {
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+/* frame curtain feedback image, Adviseable not to edit it width and height property */
+/* To style the 'Change Picture' button */
+.bipp-change-button {
+	background-color: #448;
+	color: #adadcc;
+}
+
+/* purpose of this class is to align each frame */
+.bipp-label-con {
+	margin: 0 auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+/* purpose of this class is to align the uploader */
+.bipp-uploader-con {
+	margin: 0 auto;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+/* Advised not to EDIT, the styles hide the radio buttons and and file input element */
+.bipp-input {
+	width: 0;
+	height: 0;
+}
+
+/* DO NOT edit any style below, to prevent module malfunction */
+.bipp-change-file,
+.bipp-upload-prompt,
+.bipp-frames-container,
+.bipp-curtain {
+	display: none;
+}
+
+.bipp,
+.bipp-element {
+	background-size: cover;
+}
+
+.bipp-equal {
+	background-position: center;
+}
+
+.bipp-width-1 {
+	background-position: left;
+}
+
+.bipp-width-2 {
+	background-position: right;
+}
+
+.bipp-height-1 {
+	background-position: top;
+}
+
+.bipp-height-2 {
+	background-position: bottom;
+}
+
+.bipp-module {
+	text-align: center;
+}
+
+@media (max-width: 600px) {
+	.bipp-frame-house {
+		width: 100%;
+		display: block;
+	}
+}
+
+@media (max-width: 992px) and (min-width: 601px) {
+	.bipp-frame-house {
+		width: 49%;
+		display: inline-block;
+	}
+}
+
+@media (min-width: 993px) {
+	.bipp-frame-house {
+		width: 33%;
+		display: inline-block;
+	}
+}

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latest Project</title>
-  
+
   <!-- SEO meta(s) and descriptive elements -->
   <link rel="icon" href="images/logo.png" type="image/png">
   <meta name="author" content="Tiamiyu Muizz">
@@ -13,11 +14,14 @@
 
   <!-- preconnect and dns-prefetch -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://www.gstatic.com/">
+  <link rel="preconnect" href="https://www.gstatic.com/firebasejs/8.10.0">
 
   <!-- styles needed for initial rendering -->
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
-<body class="signed-in">
+
+<body class="">
   <div id="loader">
     <style>
       #loader {
@@ -43,13 +47,15 @@
         box-shadow: inset 0 0 5px black, 0 0 10px black;
         animation: loading 1s infinite alternate;
       }
-      .loader-con{
+
+      .loader-con {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
       }
-      #loader-msg{
+
+      #loader-msg {
         max-width: 300px;
         text-align: center;
       }
@@ -82,7 +88,7 @@
       </div>
     </div>
   </div>
-  
+
   <div id="content">
     <div id="top-bar">
       <h1>
@@ -95,8 +101,8 @@
       </div>
 
       <div class="auth-pic">
-        <div role="img"></div>
-        <button>
+        <div class="proPic" role="img"></div>
+        <button onclick="modalControl('google-auth-modal')">
           <i class="fas fa-user"></i>
         </button>
       </div>
@@ -105,7 +111,8 @@
 
     <div id="main-container">
       <div id="tags" class="carousel">
-        <ul id="tags-con"> <!-- Event delegation -->
+        <ul id="tags-con">
+          <!-- Event delegation -->
           <li class="card active">
             <a href="javascript:void">Computer Science</a>
             <div class="cancel">x</div>
@@ -122,7 +129,7 @@
             <a href="javascript:void">Computer Science</a>
             <div class="cancel">x</div>
           </li>
-        </ul>        
+        </ul>
       </div>
 
       <!-- can be integrated later -->
@@ -131,7 +138,7 @@
         <div class="carousel">
           <ul>
             <li class="card">
-              
+
             </li>
             <li class="card">
 
@@ -152,12 +159,12 @@
               <h4>Adams Abaikhalumhe</h4>
               <p>
                 <span>from Adams Abaikhalumhe</span>
-                <div class="signature">
-                  <i class="fas fa-signature"></i>
-                  <b>20</b>
-                  <i class="fas fa-info-circle"></i>
-                </div>
-                <a href="">See Love Message</a>
+              <div class="signature">
+                <i class="fas fa-signature"></i>
+                <b>20</b>
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <a href="">See Love Message</a>
               </p>
               <div class="message-id">#0071</div>
             </div>
@@ -170,12 +177,12 @@
               <h4>Adams Abaikhalumhe</h4>
               <p>
                 <span>from Adams Abaikhalumhe</span>
-                <div class="signature">
-                  <i class="fas fa-signature"></i>
-                  <b>20</b>
-                  <i class="fas fa-info-circle"></i>
-                </div>
-                <a href="">See Love Message</a>
+              <div class="signature">
+                <i class="fas fa-signature"></i>
+                <b>20</b>
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <a href="">See Love Message</a>
               </p>
               <div class="message-id">#0071</div>
             </div>
@@ -188,7 +195,7 @@
   </div>
 
   <div id="modals">
-    <div id='message-modal' class="">
+    <div id='message-view-modal' class="modal-collapsible" role="dialog">
       <div class="modal-body">
         <!-- sticky close-bar can be put here -->
         <button class="close" onclick="hideMessage()">x</button>
@@ -201,18 +208,172 @@
         <div class="modal-content">
           <h4>Dear Mary Jane</h4>
           <p>
-            I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the happiest man on earth I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the happiest man on earth I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the happiest man on earth
+            I'm in love with you, i want to spend my whininy life with you, please accept my proposal and make me the
+            happiest man on earth I'm in love with you, i want to spend my whininy life with you, please accept my
+            proposal and make me the happiest man on earth I'm in love with you, i want to spend my whininy life with
+            you, please accept my proposal and make me the happiest man on earth
           </p>
         </div>
       </div>
     </div>
 
-    <div id='test-modal' class="show">
+    <div id='message-create-modal' class="modal-collapsible" role="dialog">
+
       <div class="modal-body">
         <!-- sticky close-bar can be put here -->
+        <button class="close">X</button>
 
         <div class="modal-content">
+          <h2>Write Love Message</h2>
 
+          <form action="" onsubmit="return false">
+
+            <div class="input-con">
+              <label for="beloved-name">Beloved Name</label>
+              <i class="fas fa-info-circle" title="The name of the person you want to pass message to"></i>
+              <input type="text" id="beloved-name" name="beloved-name" aria-invalid="false"
+                aria-errormessage="beloved-name-error" required>
+              <ul id="beloved-name-error" class="error">
+                <li>Only alphabets are allowed</li>
+                <li>Minimum of 3 characters, Maximum of 20 character</li>
+              </ul>
+              <span class="counter"><span id="beloved-name-counter">0</span>/20</span>
+            </div>
+
+            <div class="input-con">
+              <label for="beloved-love-message">Love Message</label>
+              <i class="fas fa-info-circle" title="The message you want your beloved to see"></i>
+              <textarea name="beloved-love-message" id="beloved-love-message" rows="4" minlength="10" maxlength="170" aria-invalid="false"
+                aria-errormessage="beloved-love-message-error" required></textarea>
+              <ul id="beloved-love-message-error" class="error">
+                <li>Only alphabets are allowed</li>
+                <li>Minimum of 10 characters, Maximum of 500 character</li>
+              </ul>
+              <span class="counter"><span id="beloved-love-message-counter">0</span>/500</span>
+            </div>
+
+            <div class="clear-fix"></div>
+
+            <div id="beloved-pic-upload" class="pic-upload">
+              <label for="beloved-upload"  title="Upload a picture">
+                <div>
+                  <div role="img"></div>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <br>
+                  <div class="upload-status">
+                    <b style="color:#f77">No Picture Selected</b>
+                    <br>
+                    Upload a picture of your beloved
+                  </div>
+                  <input type="file" accept="image/*" name="beloved-upload" id="beloved-upload">
+                </div>
+              </label>
+            </div>
+
+            <div class="action-con">
+              <button type="button" class="main-btn negative" title="Cancel">X</button>
+              <button class="main-btn">Post Message</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div id='google-auth-modal' class="modal-collapsible" role="dialog">
+      <div class="modal-body">
+        <!-- sticky close-bar can be put here -->
+        <button class="close">X</button>
+        <a href="#">Privacy policy</a>
+
+        <div class="modal-content">
+          <button class="sign-in-btn" onclick="googleSignIn()">
+            <div><img src="./images/google.png" alt="" width="30px"></div>
+            <div>Sign In with Google</div>
+          </button>
+          
+          <button class="sign-in-btn sign-up" onclick="googleSignIn()">
+            <div><img src="./images/google.png" alt="" width="30px"></div>
+            <div>Sign Up with Google</div>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <div id='profile-edit-modal' class="modal-collapsible" role="dialog">
+      <div class="modal-body">
+        <!-- sticky close-bar can be put here -->
+        <button class="close">X</button>
+        <a href="#">Privacy policy</a>
+
+        <div class="modal-content">
+          <h2>Profile Update</h2>
+          <br>
+          <p>
+            You're signed in with 
+            <b id="profile-edit-email">tiammui@gmail.com</b>
+          </p>
+
+          <form action="" onsubmit="return false">
+
+            <button type="button" id="upload-port" class="bipp bipp-equal pic-change" onclick="uploadProPic()">
+							<div>
+								<i class="fas fa-user-plus"></i><br>
+								Upload Profile <br> Picture
+							</div>
+							<div>
+								<i class="fas fa-user-plus"></i><br>
+								Change Profile <br> Picture
+							</div>
+						</button>
+						<div id="no-propic" style="color:#f77" class="title">*No picture selected</div>
+
+            <div class="input-con">
+              <label for="profile-edit-name">Profile Name</label>
+              <i class="fas fa-info-circle" title="Your display name"></i>
+              <input type="text" id="profile-edit-name" name="profile-edit-name" aria-invalid="false"
+                aria-errormessage="profile-edit-name-error" required>
+              <ul id="profile-edit-name-error" class="error">
+                <li>Only alphabets are allowed</li>
+                <li>Minimum of 3 characters, Maximum of 20 character</li>
+              </ul>
+              <span class="counter"><span id="profile-edit-name-counter">0</span>/20</span>
+            </div>
+
+            <div class="clear-fix"></div>
+
+            <div class="note">
+              <div><i class="fas fa-info-circle"></i></div>
+              <div>
+                <b><u>NOTE:</u></b> Your Email is <span title="Only visible to you">Private</span>, only you can see it. <br>
+                Your <b>Profile picture</b> and <b>Profile Name</b> are <span title="Visible to everyone">Public</span>, visible to everyone. <br>
+                <b>Don't put your real name and/or picture if you choose to be anonymous.</b>
+              </div>
+            </div>
+
+            <div class="action-con">
+              <button type="button" class="main-btn negative" title="Cancel">X</button>
+              <button class="main-btn">Save Profile</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div id='profile-view-modal' class="modal-collapsible" role="dialog">
+      <div class="modal-body">
+        <!-- sticky close-bar can be put here -->
+        <button class="close">X</button>
+
+        <div class="modal-content">
+          <button class="sign-in-btn" onclick="signOut()">
+            <div><i class="fas fa-sign-out-alt" ></i></div>
+            <div>Sign Out</div>
+          </button>
         </div>
       </div>
     </div>
@@ -226,8 +387,16 @@
   <script>
     // Initialization script can be placed here during production for performance reason
   </script>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+  <script src="utility/bipp/bipp_module.js"></script>
+  <link rel="stylesheet" href="./utility/bipp/bipp.css">
+
   <!-- TODO: use batch script to remove defaults.js during build -->
-  <script src="./../standard/defaults.js"></script>
   <script src="js/index.js"></script>
 
   <!--Page Icons script-->
@@ -237,4 +406,5 @@
   <!-- <link rel="stylesheet" href="./css/style.min.css" media="print" onload="this.media='all'"> -->
 
 </body>
+
 </html>

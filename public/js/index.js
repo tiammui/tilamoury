@@ -117,3 +117,4 @@ function snack(snackMsg, extra) {
 /**
  * TODO: type-checking functions
  */
+"use strict";var snackBarMsgObj={testToast:"💌 Toast successful with sample text of : <b>++snackExtra++</b>",shoutName:"😎 Muizz!!!!!"};function showMessage(){document.getElementById("message-modal").classList.toggle("show")}function hideMessage(){document.getElementById("message-modal").classList.toggle("show")}
